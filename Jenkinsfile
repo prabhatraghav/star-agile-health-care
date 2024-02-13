@@ -28,7 +28,7 @@ pipeline{
           }
 	     stage('deploy'){
     steps{
-        sh 'sudo cp -f /var/lib/jenkins/workspace/project/target/*.war /opt/tomcat/apache-tomcat-8.5.93/webapps/'
+        sh 'sudo cp -f /var/lib/jenkins/workspace/project/target/*.war /opt/tomcat/webapps/'
     }
 }
 
