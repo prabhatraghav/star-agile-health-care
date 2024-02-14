@@ -31,7 +31,7 @@ pipeline {
                 script {
                     def dockerCmd = 'sudo docker run -itd --name medicure -p 80:8082 techomaniac83/medicureimgaddbook:latest'
                      sshagent(credentials: ['sshkeypair']) {
-                        sh 'ssh -o StrictHostKeyChecking=no techomaniac83@34.125.254.149 ${dockerCmd}'
+                        sh ('ssh -o StrictHostKeyChecking=no techomaniac83@34.125.254.149 ${dockerCmd}')
                     }
                 }
             }
