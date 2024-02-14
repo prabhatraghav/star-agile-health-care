@@ -29,7 +29,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    def dockerCmd = 'docker run -itd --name medicure_container -p 80:8089 techomaniac83/medicureimgaddbook:latest'
+                    def dockerCmd = 'docker run -itd --name medicure -p 80:8082 techomaniac83/medicureimgaddbook:latest'
                     sshagent(['sshkeypair']) {
                         sh "ssh -o StrictHostKeyChecking=no techomaniac83@10.182.0.5 ${dockerCmd}"
                     }
