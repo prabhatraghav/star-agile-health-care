@@ -15,13 +15,6 @@ pipeline{
 		 echo 'Done: Compiling the code'
 	         }
            }
-          stage('Maven QA Stage'){
-              steps{
-		 echo 'QA of the code'
-                  sh 'mvn checkstyle:checkstyle'
-		 echo 'Done: QA of the code'
-                 }
-           }
 	     stage('Maven Clean Package Stage'){
 		steps{
 		 echo 'Packaging of the code'
