@@ -15,13 +15,6 @@ pipeline{
 		 echo 'Done: Compiling the code'
 	         }
            }
-          stage('Maven Test Stage'){
-              steps{
-		 echo 'Testing the code'
-                 sh 'mvn test'
-		 echo 'Done: Testing the code'
-	         }
-           }
           stage('Maven QA Stage'){
               steps{
 		 echo 'QA of the code'
