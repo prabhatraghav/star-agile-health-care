@@ -31,5 +31,5 @@ pipeline {
                     sh 'docker run -itd --name medicure_container -p 80:8089 techomaniac83/medicureimgaddbook:latest'
                 }
             }
-        )
+    }
 }
