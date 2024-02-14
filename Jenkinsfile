@@ -14,6 +14,7 @@ pipeline {
         }
         stage('Build Image') {
             steps {
+                sh 'wget https://raw.githubusercontent.com/prabhatraghav/star-agile-health-care/master/Dockerfile'
                 sh 'docker build -t medicureimg .'
                 sh 'docker tag medicureimg:latest techomaniac83/medicureimgaddbook:latest'
             }
