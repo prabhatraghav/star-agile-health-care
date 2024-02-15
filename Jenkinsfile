@@ -19,7 +19,6 @@ pipeline {
             }
         }
 
-    }
         stage('Docker login and push') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'dockerhub_cred', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
@@ -33,6 +32,7 @@ pipeline {
                     sh 'docker run -itd --name medicure_container -p 80:8089 techomaniac83/medicureimgaddbook:latest'
                 }
             }
+    }
         post {
             success {
                 echo 'Pipeline successfully executed!'
