@@ -29,7 +29,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                    sh 'docker run -itd --name medicure_container -p 80:8089 techomaniac83/medicureimgaddbook:latest'
+                    sh 'docker run -itd --name medicure -p 80:8082 techomaniac83/medicureimgaddbook:latest'
                 }
             }
     }
