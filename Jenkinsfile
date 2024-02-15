@@ -18,6 +18,8 @@ pipeline {
                 sh 'docker tag medicureimg:latest techomaniac83/medicureimgaddbook:latest'
             }
         }
+
+    }
         stage('Docker login and push') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'dockerhub_cred', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
@@ -39,5 +41,4 @@ pipeline {
                 echo 'Pipeline failed!'
             }
         }
-    }
 }
